@@ -7,4 +7,3 @@ def gcd_extended(num1, num2):
 a = gcd_extended(100, 101)
 
 print(f'Делитель равен {a[0]}, x = {a[1]}, y = {a[2]}')
-
