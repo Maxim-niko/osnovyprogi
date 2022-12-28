@@ -50,16 +50,15 @@ class Rocket(Body):
             self.vy -= MODEL_G * MODEL_DT - self.a * MODEL_DT
         else:
             self.vy -= MODEL_G * MODEL_DT
+            
+        self.m -= MODEL_M
 
-        self.m -= MODEL_M      
+bodies = [
+    Rocket(1,2,6,3,40,5,70),
+    Body(8,9,10,11)
+]
 
-        
-R = Rocket(1,2,6,3,40,5,70)
-B = Body(8,9,10,11)
-
-for a in range(10000):
-    R.advance()
-    B.advance()
-
-R.plot()
-B.plot()
+for b in bodies:
+    for a in range(10000):
+        b.advance()
+    b.plot()
